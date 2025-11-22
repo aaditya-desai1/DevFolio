@@ -30,7 +30,7 @@ import {
 
 // --- FIXED: Use a string reference for public assets instead of import
 // This bypasses the module resolver error in the hosted environment.
-const CV_URL = '/Aaditya_Desai_CV.pdf'; 
+const CV_URL = '/assets/Aaditya_Desai_CV.pdf'; 
 
 /**
  * Aaditya Desai - The DevOps Pipeline Portfolio
