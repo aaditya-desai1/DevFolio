@@ -28,6 +28,10 @@ import {
   Leaf             // MongoDB
 } from 'lucide-react';
 
+// --- FIXED: Use a string reference for public assets instead of import
+// This bypasses the module resolver error in the hosted environment.
+const CV_URL = '/Aaditya_Desai_CV.pdf'; 
+
 /**
  * Aaditya Desai - The DevOps Pipeline Portfolio
  * Concept: The user scrolls through a "Continuous Delivery" pipeline.
@@ -160,7 +164,9 @@ export default function DevOpsPortfolio() {
              <button onClick={() => scrollTo('skills')} className={`transition-colors ${activeStage === 'skills' ? 'text-cyan-400' : 'text-slate-600 hover:text-cyan-400'}`}>02. build</button>
              <button onClick={() => scrollTo('projects')} className={`transition-colors ${activeStage === 'projects' ? 'text-cyan-400' : 'text-slate-600 hover:text-cyan-400'}`}>03. deploy</button>
              <button onClick={() => scrollTo('contact')} className={`transition-colors ${activeStage === 'contact' ? 'text-cyan-400' : 'text-slate-600 hover:text-cyan-400'}`}>04. ping</button>
-             <a href="assets/Aaditya_Desai_CV.pdf" className="px-4 py-2 border border-cyan-500/30 text-cyan-400 rounded hover:bg-cyan-500/10 transition-all">
+             
+             {/* FIXED HREF: Uses the CV_URL string which points to the public folder */}
+             <a href={CV_URL} download="Aaditya_Desai_CV.pdf" className="px-4 py-2 border border-cyan-500/30 text-cyan-400 rounded hover:bg-cyan-500/10 transition-all">
                View Logs (CV)
              </a>
           </div>
